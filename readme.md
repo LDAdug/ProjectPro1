@@ -1,5 +1,4 @@
 # Project Name
-- Name (@username)
-- Name (@username)
-- Name (@username)
-- Name (@username)
+- Lawrence (@LDAdug)
+- Hai (@haily1711SJSU)
+- Michael (@michaelzabaneh)

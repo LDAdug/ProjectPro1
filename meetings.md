@@ -36,7 +36,7 @@
 ### 2022-11-20 at 1:00
 - Attendance: Lawrence, Michael and Hai 
 - Team updates:
-- Hai: 
+- Hai: Worked on Use Case 5 and 6. Finished Milestone 1
 - Michael:
 - Lawrence
 Summary: 

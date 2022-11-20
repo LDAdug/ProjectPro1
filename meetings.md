@@ -32,3 +32,12 @@
   <- Pair program on one part of the project. Driver will be the person responsible for that requirement.>
 
 - Summarize group progress
+
+### 2022-11-20 at 1:00
+- Attendance: Lawrence, Michael and Hai 
+- Team updates:
+- Hai: 
+- Michael:
+- Lawrence
+Summary: 
+

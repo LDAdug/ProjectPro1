@@ -45,7 +45,6 @@ Either the recipient or the user receives a notification
   1. If the user receives a private message from another user, the user receives a notification
   2. Do steps 1-6 in primary sequence to view the new messages sent by another user
 
-—------------------------------------------------------------------------------------------------------------
 6. Search Message (Hai)
 - **Pre-condition:**  User must have a user profile and is logged in
 

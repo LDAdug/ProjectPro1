@@ -23,6 +23,79 @@
 
 ## Use Cases
 
+1. Send message to followers (Lawrence)
+- **Pre-condition:** <can be a list or short description> 
+Followers must be following user and user must know who is following them
+
+- **Trigger:** <can be a list or short description> 
+Button that initiates form to select followers and create a message that will be sent to selected followers
+
+Button automatically saves followers onto a list and present user with call to create a message
+
+- **Primary Sequence:**
+  
+  1. Press button that initiates trigger #1
+  2. Window appears showing followers list
+  3. Selected followers is saved onto a list 
+  4. Call to user to create a message
+  5. Saves message onto a string
+  6. Button appears to send message
+  7. Message is exported and imported to the followers
+  8. Message is called and displayed to the follower
+  9. ...
+  10. <Try to stick to a max of 10 steps>
+
+- **Primary Postconditions:** 
+Return condition where if a message has been successfully sent, return to user’s page where “send message to follower” button is offered and notify message sent successfully.
+
+
+- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. User selects button to “send message to followers”
+  2. Alternate Tigger #2: Saves all followers onto a list
+  3. Calls for user to create a message
+  4. Message saved onto a string
+  5. Send button after message is ready to be sent
+  6. Message is exported and imported to the followers
+  7. Message is called and displayed to the follower
+  8. … 
+
+3. Follow User (Lawrence)
+- **Pre-condition:** <can be a list or short description> 
+Searched user must exist as a saved account on the app
+User must not already be following searched user
+
+- **Trigger:** <can be a list or short description> 
+User clicks on button to initiate “Follow User”
+
+- **Primary Sequence:**
+  
+  1. User searches up another user they wish to follow
+  2. Brings user to other user’s profile page
+  3. Next to username, provides button to “Follow User”
+  4. After clicking “Follow User” “following” counter increases by 1
+  5. Followed user’s “followed” count increases by 1
+  6. Change “Follow User” button to “Unfollow User”
+  7. Proceed to postcondition
+  8. ...
+  9. ...
+  10. <Try to stick to a max of 10 steps>
+
+- **Primary Postconditions:** <can be a list or short description> 
+If following and follower count when incremented returns true, return a notification message to follower and followee confirming changes to their respected lists
+
+- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. User searches up user they wish to follow
+  2. Brings user to other user’s profile page
+  3. Display “Follow User” button
+  4. If User is already followed, display “Unfollow User” button instead
+  5. If searcher selects button, decrement searched user’s follower count by 1
+  6. Decrement user’s following count by 1
+  7. Change “Unfollow User” button to “Follow User” button
+  8. Proceed to post condition
+
+
 5. Send/Recieve Private Messages (Hai)
 - **Pre-condition:** User has a profile, is logged in and can search for a specific user(must exist).
 

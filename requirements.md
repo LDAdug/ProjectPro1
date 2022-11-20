@@ -60,6 +60,30 @@ Return condition where if a message has been successfully sent, return to user�
   7. Message is called and displayed to the follower
   8. … 
 
+2. Search for User (Michael)
+- **Pre-condition:** <can be a list or short description> The user must exist and lie within the database of users. 
+
+- **Trigger:** <can be a list or short description> A search bar must exist that allows users to search for a username 
+
+- **Primary Sequence:**
+  
+  1. User locates search bar at the home page
+  2. User clicks the search bar
+  3. Search bar opens for user to type
+  4. User enters username of desired user character by character
+  5. As user types character by character, search bar prompts username containing sequence of characters typed out
+  6. Once the username is prompted, user is able to click on username
+  7. Username is clicked when it is prompted 
+  8. User can still have the search bar accessible with the typed out username even if they have been redirected to the usernames page
+
+- **Primary Postconditions:** <can be a list or short description> If the user exists, User is redirected to the usernames page from the homepage with the search bar. User can still have the search bar accessible with the typed out username even if they have been redirected to the usernames page 
+
+- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. On the homepage, instead of a search bar we will use a table of contents of users
+  2. The table of contents of users will be in alphabetical order while usernames beginning with non-letters will be at the end of the table of contents
+  3. When username is found within the table of contents, their username is clickable and will redirect them to the usernames page when clicked on
+
 3. Follow User (Lawrence)
 - **Pre-condition:** <can be a list or short description> 
 Searched user must exist as a saved account on the app
@@ -95,6 +119,25 @@ If following and follower count when incremented returns true, return a notifica
   7. Change “Unfollow User” button to “Follow User” button
   8. Proceed to post condition
 
+4. User profiles (Michael)
+- **Pre-condition:** <can be a list or short description> The user must exist and lie within the database of users.  
+
+- **Trigger:** <can be a list or short description> The username is clicked on and the user is redirected to the users page
+
+- **Primary Sequence:**
+  
+  1. Users homepage contains username at the top of page
+  2. Users homepage contains preference of name
+  3. Users homepage contains users preferred pronouns under preference of name
+  4. Users homepage contains bio of users preference under the users preferred pronouns 
+  5. Users homepage contains a photo album that contains pictures that the user uploaded
+  6. Users homepage contains a message button that allows a user to message the specific user
+  7. Users homepage contains an unfriend or friend button on their profile 
+  8. Users homepage contains the message history between the two users
+
+- **Primary Postconditions:** <can be a list or short description> If users homepage exists, then their homepage is visible with all the information above
+
+No alternate sequence available
 
 5. Send/Recieve Private Messages (Hai)
 - **Pre-condition:** User has a profile, is logged in and can search for a specific user(must exist).

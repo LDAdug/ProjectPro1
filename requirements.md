@@ -1,18 +1,18 @@
 ## <remove all of the example text and notes in < > such as this one>
 
 ## Functional Requirements
-1. Login
-2. Logout
-3. Create new account
-4. Delete account
-5. User home page (user can see messages of users they follow)
-6. Send message to followers
-7. Search for user
-8. Follow User
-9. User Profiles
-10. Post Image with message
-11. Send/Receive Private Messages
-12. Search Message
+1. Login (Lawrence)
+2. Logout (Lawrence)
+3. Create new account (Michael)
+4. Delete account (Hai)
+5. User home page (user can see messages of users they follow) (Michael)
+6. Send message to followers (lawrence)
+7. Search for user (Michael)
+8. Follow User (Lawrence)
+9. User Profiles (Michael)
+10. Post Image with message (Hai)
+11. Send/Receive Private Messages (Hai)
+12. Search Message (Hai)
 
 ## Non-functional Requirements
 

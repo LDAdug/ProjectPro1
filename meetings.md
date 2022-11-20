@@ -39,5 +39,5 @@
 - Hai: Worked on Use Case 5 and 6. Finished Milestone 1
 - Michael:
 - Lawrence: Working on Use Case requirements #1 and #3
-Summary: Talked about today's goal after the meeting. Goal is to complete all 6 Use Case requirements and push onto the git repository and pulled into all branches.
+- Summary: Talked about today's goal after the meeting. Goal is to complete all 6 Use Case requirements and push onto the git repository and pulled into all branches.
 

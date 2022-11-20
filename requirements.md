@@ -1,4 +1,3 @@
-## <remove all of the example text and notes in < > such as this one>
 
 ## Functional Requirements
 1. Login (Lawrence)
@@ -24,10 +23,10 @@
 ## Use Cases
 
 1. Send message to followers (Lawrence)
-- **Pre-condition:** <can be a list or short description> 
+- **Pre-condition:**  
 Followers must be following user and user must know who is following them
 
-- **Trigger:** <can be a list or short description> 
+- **Trigger:**  
 Button that initiates form to select followers and create a message that will be sent to selected followers
 
 Button automatically saves followers onto a list and present user with call to create a message
@@ -42,14 +41,13 @@ Button automatically saves followers onto a list and present user with call to c
   6. Button appears to send message
   7. Message is exported and imported to the followers
   8. Message is called and displayed to the follower
-  9. ...
-  10. <Try to stick to a max of 10 steps>
+ 
 
 - **Primary Postconditions:** 
 Return condition where if a message has been successfully sent, return to user’s page where “send message to follower” button is offered and notify message sent successfully.
 
 
-- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+- **Alternate Sequence:** 
   
   1. User selects button to “send message to followers”
   2. Alternate Tigger #2: Saves all followers onto a list
@@ -61,9 +59,9 @@ Return condition where if a message has been successfully sent, return to user�
   8. … 
 
 2. Search for User (Michael)
-- **Pre-condition:** <can be a list or short description> The user must exist and lie within the database of users. 
+- **Pre-condition:**  The user must exist and lie within the database of users. 
 
-- **Trigger:** <can be a list or short description> A search bar must exist that allows users to search for a username 
+- **Trigger:**  A search bar must exist that allows users to search for a username 
 
 - **Primary Sequence:**
   
@@ -76,20 +74,20 @@ Return condition where if a message has been successfully sent, return to user�
   7. Username is clicked when it is prompted 
   8. User can still have the search bar accessible with the typed out username even if they have been redirected to the usernames page
 
-- **Primary Postconditions:** <can be a list or short description> If the user exists, User is redirected to the usernames page from the homepage with the search bar. User can still have the search bar accessible with the typed out username even if they have been redirected to the usernames page 
+- **Primary Postconditions:**  If the user exists, User is redirected to the usernames page from the homepage with the search bar. User can still have the search bar accessible with the typed out username even if they have been redirected to the usernames page 
 
-- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+- **Alternate Sequence:** 
   
   1. On the homepage, instead of a search bar we will use a table of contents of users
   2. The table of contents of users will be in alphabetical order while usernames beginning with non-letters will be at the end of the table of contents
   3. When username is found within the table of contents, their username is clickable and will redirect them to the usernames page when clicked on
 
 3. Follow User (Lawrence)
-- **Pre-condition:** <can be a list or short description> 
+- **Pre-condition:** 
 Searched user must exist as a saved account on the app
 User must not already be following searched user
 
-- **Trigger:** <can be a list or short description> 
+- **Trigger:** 
 User clicks on button to initiate “Follow User”
 
 - **Primary Sequence:**
@@ -101,14 +99,12 @@ User clicks on button to initiate “Follow User”
   5. Followed user’s “followed” count increases by 1
   6. Change “Follow User” button to “Unfollow User”
   7. Proceed to postcondition
-  8. ...
-  9. ...
-  10. <Try to stick to a max of 10 steps>
 
-- **Primary Postconditions:** <can be a list or short description> 
+
+- **Primary Postconditions:**  
 If following and follower count when incremented returns true, return a notification message to follower and followee confirming changes to their respected lists
 
-- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+- **Alternate Sequence:** 
   
   1. User searches up user they wish to follow
   2. Brings user to other user’s profile page
@@ -120,9 +116,11 @@ If following and follower count when incremented returns true, return a notifica
   8. Proceed to post condition
 
 4. User profiles (Michael)
-- **Pre-condition:** <can be a list or short description> The user must exist and lie within the database of users.  
+- **Pre-condition:** 
+The user must exist and lie within the database of users.  
 
-- **Trigger:** <can be a list or short description> The username is clicked on and the user is redirected to the users page
+- **Trigger:** 
+ The username is clicked on and the user is redirected to the users page
 
 - **Primary Sequence:**
   
@@ -135,7 +133,8 @@ If following and follower count when incremented returns true, return a notifica
   7. Users homepage contains an unfriend or friend button on their profile 
   8. Users homepage contains the message history between the two users
 
-- **Primary Postconditions:** <can be a list or short description> If users homepage exists, then their homepage is visible with all the information above
+- **Primary Postconditions:** 
+ If users homepage exists, then their homepage is visible with all the information above
 
 No alternate sequence available
 

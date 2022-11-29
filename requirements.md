@@ -7,7 +7,7 @@
 5. User home page (user can see messages of users they follow) (Michael)
 6. Send message to followers (lawrence)
 7. Search for user (Michael)
-8. Follow User (Lawrence)
+8. Follow User (Hai)
 9. User Profiles (Michael)
 10. Post Image with message (Hai)
 11. Send/Receive Private Messages (Hai)

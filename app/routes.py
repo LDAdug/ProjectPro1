@@ -13,6 +13,6 @@ def home():
         return redirect('/')
     if current_form.username.data == "" or current_form.password.data == "":
         flash('ERROR: Empty input')
-    a = ' '
+    a = 'Welcome to my App'
     name = 'New User '
     return render_template('login.html', name=name, a=a, form=current_form)

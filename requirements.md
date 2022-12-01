@@ -49,14 +49,19 @@ Return condition where if a message has been successfully sent, return to user�
 
 - **Alternate Sequence:** 
   
-  1. User selects button to “send message to followers”
-  2. Alternate Tigger #2: Saves all followers onto a list
-  3. Calls for user to create a message
-  4. Message saved onto a string
-  5. Send button after message is ready to be sent
-  6. Message is exported and imported to the followers
-  7. Message is called and displayed to the follower
-  8. … 
+  1. If user reaches a certain word count limit
+  2. Flash error “Your message is too long”
+  3. Return user to start of message function sequence
+  4. Ask the user to write a shorter message
+  5. ..  
+
+- **Alternate Sequence #2:** 
+  1. If user tries to send a message using characters outside of ASCII and system is unable to read it
+  2. Flash error “Some characters cannot be read”
+  3. Return user to start of message function sequence
+  4. Ask user to write using traditionally used characters
+  5. ..
+
 
 2. Search for User (Michael)
 - **Pre-condition:**  The user must exist and lie within the database of users. 
@@ -95,10 +100,9 @@ User clicks on button to initiate “Follow User”
   1. User searches up another user they wish to follow
   2. Brings user to other user’s profile page
   3. Next to username, provides button to “Follow User”
-  4. After clicking “Follow User” “following” counter increases by 1
-  5. Followed user’s “followed” count increases by 1
-  6. Change “Follow User” button to “Unfollow User”
-  7. Proceed to postcondition
+  4. After clicking “Follow User” change button to “Unfollow User”
+  5. Proceed to postcondition
+
 
 
 - **Primary Postconditions:**  
@@ -110,10 +114,9 @@ If following and follower count when incremented returns true, return a notifica
   2. Brings user to other user’s profile page
   3. Display “Follow User” button
   4. If User is already followed, display “Unfollow User” button instead
-  5. If searcher selects button, decrement searched user’s follower count by 1
-  6. Decrement user’s following count by 1
-  7. Change “Unfollow User” button to “Follow User” button
-  8. Proceed to post condition
+  5. If user press "Unfollow User" button
+  6. Change “Unfollow User” button to “Follow User” button
+  7. Proceed to post condition
 
 4. User profiles (Michael)
 - **Pre-condition:** 

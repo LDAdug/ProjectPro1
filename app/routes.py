@@ -43,8 +43,8 @@ def login():
         print(current_form.username.data, current_form.password.data)
         return redirect('/')
 
-    a = 1
-    name = 'Carlos'
+    #a = 1
+    #name = 'Carlos'
     if current_form.username.data == "" or current_form.password.data == "":
         flash('ERROR: Empty input')
     a = 'Welcome to my App!'

@@ -20,8 +20,8 @@ def logout():
     return redirect('/')
 
 
-@myapp_obj.route('/', methods=['POST', 'GET'])
-def home():
+@myapp_obj.route('/login', methods=['POST', 'GET'])
+def login():
     current_form = LoginForm()
     # taking input from the user and doing somithing with it
     if current_form.validate_on_submit():
@@ -49,3 +49,7 @@ def home():
     name = 'User'
  
     return render_template('login.html', name=name, a=a, form=current_form)
+
+@myapp_obj.route('/')
+def home():
+    return render_template('home.html')

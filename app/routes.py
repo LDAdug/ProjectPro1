@@ -3,7 +3,7 @@ from flask import render_template, redirect, flash
 from app.forms import LoginForm
 
 
-@myapp_obj.route('/login', methods=['POST', 'GET'])
+@myapp_obj.route('/', methods=['POST', 'GET'])
 def home():
     current_form = LoginForm()
     # taking input from the user and doing somithing with it
@@ -14,6 +14,6 @@ def home():
         return redirect('/')
     if current_form.username.data == "" or current_form.password.data == "":
         flash('ERROR: Empty input')
-    a = 1
-    name = 'Carlos'
+    a = 'Welcome to my App!'
+    name = 'User'
     return render_template('login.html', name=name, a=a, form=current_form)

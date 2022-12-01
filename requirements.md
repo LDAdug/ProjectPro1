@@ -156,9 +156,9 @@ No alternate sequence available
 Either the recipient or the user receives a notification
 
 - **Alternate Sequence:** 
-  
-  1. If the user receives a private message from another user, the user receives a notification
-  2. Do steps 1-6 in primary sequence to view the new messages sent by another user
+  1. User types in a foreign language inside the search user bar but System cannot recognize the string input
+  2. To resolve, System displays “cannot read the string input” and displays an empty list of users
+  3. System asks the user to input another user name in English inside the user search bar
 
 6. Search Message (Hai)
 - **Pre-condition:**  User must have a user profile and is logged in
@@ -178,6 +178,7 @@ Either the recipient or the user receives a notification
 User is logged in and list of messages is still displayed
 
 - **Alternate Sequence:** 
-  
-  1. If the number of messages is greater than 10, System only displays 10 messages and user can scroll down for more users
-  2. Do steps 2-6 in primary sequence
+  1. User types in a foreign language inside the message search bar but System cannot recognize the string input
+  2. To resolve, System displays “cannot read the string input” and displays an empty list of messages
+  3. System asks the user to input another message string in English inside
+  the search message bar

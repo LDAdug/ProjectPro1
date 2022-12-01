@@ -1,5 +1,7 @@
 from app import myapp_obj
-from flask import render_template, redirect, flash
+from app import db
+from app.forms import RegistrationForm
+from flask import render_template, redirect, flash, url_for
 from app.forms import LoginForm
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -50,6 +52,20 @@ def login():
  
     return render_template('login.html', name=name, a=a, form=current_form)
 
+@myapp_obj.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
+    
 @myapp_obj.route('/')
 def home():
     return render_template('home.html')

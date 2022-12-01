@@ -19,9 +19,9 @@ for milestone2. Discussed the functionality of the webpage.
 
 ### 2022-11-30 at 3:00pm
 - Attendance: Lawrence, Michael and Hai 
-- Team updates: Discussed availability
-- Hai: Can work on delete account as soon as login/logout is finished
-- Michael: Can work on Create new account this week
-- Lawrence: Can work on Login/logout on wednesday and thursday 
-- Summary: Talked about who will do the 10 functional requirements
-for milestone2. Discussed the functionality of the webpage. 
+- Team updates: Worked together to create a base for the website
+- Hai: Worked together on the base 
+- Michael: Worked together on the base 
+- Lawrence: Worked together on the base 
+- Summary: Worked together to create a base for the website, looked up
+a tutorial together, fixed some bugs

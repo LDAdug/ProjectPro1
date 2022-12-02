@@ -64,28 +64,27 @@ Return condition where if a message has been successfully sent, return to userâ€
 
 
 2. Search for User (Michael)
-- **Pre-condition:**  The user must exist and lie within the database of users. 
+- **Pre-condition:** The user must exist and have an account registered with the website. The search bar will also only find the username of the user and not their associated name for privacy. 
 
-- **Trigger:**  A search bar must exist that allows users to search for a username 
+- **Trigger:** User clicks on search bar in dedicated area on the website where they can enter the desired user's username for searching.
 
 - **Primary Sequence:**
   
-  1. User locates search bar at the home page
-  2. User clicks the search bar
-  3. Search bar opens for user to type
-  4. User enters username of desired user character by character
-  5. As user types character by character, search bar prompts username containing sequence of characters typed out
-  6. Once the username is prompted, user is able to click on username
-  7. Username is clicked when it is prompted 
-  8. User can still have the search bar accessible with the typed out username even if they have been redirected to the usernames page
+  1. User locates the search bar at the home page and the user clicks the search bar. The search bar then opens for user to type
+  2. User enters username of desired user in the search bar
+  3. After user types username of desired user in the search bar, they must click enter
+  4. After pressing enter, user is redirected to a page with usernames related to their previously types and entered username
+  5. User locates username in page of related usernames and clicks on their name 
+  6. User is then redirected to clicked on usernames page
 
-- **Primary Postconditions:**  If the user exists, User is redirected to the usernames page from the homepage with the search bar. User can still have the search bar accessible with the typed out username even if they have been redirected to the usernames page 
+- **Primary Postconditions:**  User is redirected to the usernames page if they exist and are a registered user. The search bar will be on the homepage only and if user wants to use search bar again, they must redirect to the homepage where they can utilize the search bar
 
 - **Alternate Sequence:** 
   
-  1. On the homepage, instead of a search bar we will use a table of contents of users
-  2. The table of contents of users will be in alphabetical order while usernames beginning with non-letters will be at the end of the table of contents
-  3. When username is found within the table of contents, their username is clickable and will redirect them to the usernames page when clicked on
+  1. User types the desired username in non english characters
+  2. When they press enter, tell the user that types username with non english letters that the username contains characters that are invalid.
+  3. Specify to user that usernames are only standard english keyboard characters 
+
 
 3. Follow User (Lawrence)
 - **Pre-condition:** 
@@ -118,27 +117,28 @@ If following and follower count when incremented/decreminted returns true, retur
   6. Proceed to post condition
 
 4. User profiles (Michael)
-- **Pre-condition:** 
-The user must exist and lie within the database of users.  
+- **Pre-condition:**  The user must exist and have an account registered with the website.
 
-- **Trigger:** 
- The username is clicked on and the user is redirected to the users page
+- **Trigger:**  The username is clicked on and the user is redirected to the users page
 
 - **Primary Sequence:**
   
-  1. Users homepage contains username at the top of page
-  2. Users homepage contains preference of name
-  3. Users homepage contains users preferred pronouns under preference of name
-  4. Users homepage contains bio of users preference under the users preferred pronouns 
-  5. Users homepage contains a photo album that contains pictures that the user uploaded
-  6. Users homepage contains a message button that allows a user to message the specific user
-  7. Users homepage contains an unfriend or friend button on their profile 
-  8. Users homepage contains the message history between the two users
+  1. User types in a username in the search bar and clicks on desired username
+  2. System then redirects the user to the usernames profile page
 
-- **Primary Postconditions:** 
- If users homepage exists, then their homepage is visible with all the information above
+- **Primary Postconditions:**  If users homepage exists, then their profile page will appear when clicked on at search or on homepage. 
 
-No alternate sequence available
+- **Alternate Sequence 1:** 
+
+1. User sees post of alternate user on their homepage that they are following
+2. User then clicks on alternate users username on their post and is redirected to their profile page
+
+
+- **Alternate Sequence 2:** 
+
+1. User clicks on username from search bar or on homepage from alternate users post
+2. Username that is clicked on is a user that has been previously deleted
+3. When a user clicks on the username that is deleted, redirect them to a page that tells them the user has been deleted.
 
 5. Send/Recieve Private Messages (Hai)
 - **Pre-condition:** User has a profile, is logged in and can search for a specific user(must exist).

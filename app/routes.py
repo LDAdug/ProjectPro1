@@ -19,8 +19,9 @@ def private():
 @myapp_obj.route('/logout')
 @login_required
 def logout():
-    load_user(current_user)
-    return redirect('/')
+    logout_user()
+    flash('You have logged out. Thank you for visiting!')
+    return redirect('/')     #redirect to starting page (LA 12/2 2:32pm)
 
 
 @myapp_obj.route('/login', methods=['POST', 'GET'])

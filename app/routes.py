@@ -20,7 +20,7 @@ def private():
 @login_required
 def logout():
     logout_user()
-    flash('You have logged out. Thank you for visiting!')
+    flash('You have logged out. Thank you for visiting!')   #confirmation of logout
     return redirect('/')     #redirect to starting page (LA 12/2 2:32pm)
 
 

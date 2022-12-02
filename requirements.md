@@ -106,17 +106,16 @@ User clicks on button to initiate “Follow User”
 
 
 - **Primary Postconditions:**  
-If following and follower count when incremented returns true, return a notification message to follower and followee confirming changes to their respected lists
+If following and follower count when incremented/decreminted returns true, return a notification message to follower and followee confirming changes to their respected lists
 
 - **Alternate Sequence:** 
   
   1. User searches up user they wish to follow
   2. Brings user to other user’s profile page
-  3. Display “Follow User” button
-  4. If User is already followed, display “Unfollow User” button instead
-  5. If user press "Unfollow User" button
-  6. Change “Unfollow User” button to “Follow User” button
-  7. Proceed to post condition
+  3. If User is already followed, display “Unfollow User” button instead
+  4. If user press "Unfollow User" button
+  5. Change “Unfollow User” button to “Follow User” button
+  6. Proceed to post condition
 
 4. User profiles (Michael)
 - **Pre-condition:** 

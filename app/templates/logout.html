@@ -5,11 +5,11 @@
 {% block mycontent %}
 <div>
     Microblog:
-    <a href="{{ url_for('/') }}">Home</a>
+    <a href="{{ url_for('/') }}">Home</a>   
     {% if current_user.is_anonymous %}
-    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('login') }}">Login</a>      <!--redirects visitor to log in first before logging out-->
     {% else %}
-    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('logout') }}">Logout</a>        <!--standard use of logout-->
     {% endif %}
 </div>
-{% endblock %}
+{% endblock %}      <!--Lawrence 12/2 3:09pm-->

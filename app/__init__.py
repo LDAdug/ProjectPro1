@@ -17,5 +17,8 @@ db = SQLAlchemy(myapp_obj)
 login = LoginManager(myapp_obj)
 
 login.login_view = 'login'
-
+@myapp_obj.before_first_request
+def create_tables():
+    db.create_all()
+    
 from app import routes, models

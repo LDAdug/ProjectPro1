@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block mycontent %}
+    {% for user in form %} 
+    <h1>
+        Registered Users:
+    </h1>
+    <div>
+        <b>Name:</b> {{ user.username }}, <b>Email:</b> {{ user.email}}
+    </div>
+    {% endfor %}
+{% endblock %}

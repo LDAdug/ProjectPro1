@@ -10,6 +10,7 @@ from flask_login import login_required
 from flask_login import login_user
 from flask_login import logout_user
 
+
 @myapp_obj.route('/private')
 @login_required
 def private():
@@ -29,7 +30,6 @@ def login():
     if current_form.validate_on_submit():
         # search to make sure we have the user in our database
         user = User.query.filter_by(username=current_form.username.data).first()
-
         # check user's password with what is saved on the database
         if user is None or not user.check_password(current_form.password.data):
             flash('Invalid password!')
@@ -54,8 +54,6 @@ def login():
 
 @myapp_obj.route('/register', methods=['GET', 'POST'])
 def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
@@ -69,3 +67,8 @@ def register():
 @myapp_obj.route('/')
 def home():
     return render_template('home.html')
+
+@myapp_obj.route('/table')
+def users():
+    all_users = User.query.all()
+    return render_template("table.html", form=all_users)

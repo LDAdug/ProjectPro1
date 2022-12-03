@@ -4,6 +4,9 @@
          <title>My Page</title>
      </head>
      <body>
+      <div>
+        <a href="/">Home</a>
+      </div>
          {% block mycontent %}{% endblock %}
         {% with messages = get_flashed_messages() %}
         {% if messages %}

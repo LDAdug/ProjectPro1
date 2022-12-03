@@ -27,6 +27,11 @@ def logout():
 @myapp_obj.route('/login', methods=['POST', 'GET'])
 def login():
     current_form = LoginForm()
+    # If user is already logged in redirect to homepage
+    if current_user.is_authenticated:
+        flash('User is currently logged in! Please logout to login as another user')
+        return redirect('/')
+    
     # taking input from the user and doing somithing with it
     if current_form.validate_on_submit():
         # search to make sure we have the user in our database
@@ -39,8 +44,7 @@ def login():
 
         # login user
         login_user(user, remember=current_form.remember_me.data)
-        flash('quick way to debug')
-        flash('another quick way to debug')
+        flash('Successfully Logged In')
         print(current_form.username.data, current_form.password.data)
         return redirect('/')
 
@@ -48,10 +52,9 @@ def login():
     #name = 'Carlos'
     if current_form.username.data == "" or current_form.password.data == "":
         flash('ERROR: Empty input')
-    a = 'Welcome to my App!'
-    name = 'User'
+    a = 'Login'
  
-    return render_template('login.html', name=name, a=a, form=current_form)
+    return render_template('login.html', a=a, form=current_form)
 
 @myapp_obj.route('/register', methods=['GET', 'POST'])
 def register():
@@ -66,10 +69,18 @@ def register():
     return render_template('register.html', title='Register', form=form)
     
 @myapp_obj.route('/')
-def home():
-    return render_template('home.html')
+def homepage():
+    return render_template('base.html')
 
-@myapp_obj.route('/table')
+@myapp_obj.route('/users')
 def users():
     all_users = User.query.all()
-    return render_template("table.html", form=all_users)
+    return render_template("Users.html", form=all_users)
+
+@myapp_obj.route('/account')
+def account():
+    # If user is not logged in request user to log in
+    if current_user.is_authenticated is False:
+        flash('Account cannot be accessed because User is not logged in')
+    return render_template("profile.html")
+    

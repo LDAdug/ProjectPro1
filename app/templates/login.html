@@ -2,8 +2,6 @@
 
 {% block mycontent %}
 <h1>{{a}}</h1>
-<p>Hello {{name}} </p>
-
 <form action="" method="POST" novalidate>
     {{form.hidden_tag()}}
     <p>{{form.username.label}} <br> {{form.username()}}</p>

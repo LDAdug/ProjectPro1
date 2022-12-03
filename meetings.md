@@ -25,3 +25,12 @@ for milestone2. Discussed the functionality of the webpage.
 - Lawrence: Worked together on the base 
 - Summary: Worked together to create a base for the website, looked up
 a tutorial together, fixed some bugs
+
+### 2022-12-2 at 2:00pm
+- Attendance: Lawrence, Michael and Hai 
+- Team updates: All members worked on milestone 1 proposal revisions
+- Hai: Worked delete account
+- Michael: worked on milestone 1 proposal revisions
+- Lawrence: Worked on logout and login page and revisions
+- Summary: All members worked on milestone 1 proposal revisions, Hai worked on delete account, michael worked on revisions, lawrence
+worked on login and logout page.

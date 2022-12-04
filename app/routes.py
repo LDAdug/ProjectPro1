@@ -82,5 +82,9 @@ def account():
     # If user is not logged in request user to log in
     if current_user.is_authenticated is False:
         flash('Account cannot be accessed because User is not logged in')
-    return render_template("profile.html")
+        return redirect('/')
+    # Display profile info
+    user = current_user
+        
+    return render_template("profile.html", user=user)
     

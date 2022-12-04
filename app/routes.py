@@ -45,7 +45,6 @@ def login():
         # login user
         login_user(user, remember=current_form.remember_me.data)
         flash('Successfully Logged In')
-        print(current_form.username.data, current_form.password.data)
         return redirect('/')
 
     #a = 1
@@ -59,8 +58,11 @@ def login():
 @myapp_obj.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
+    if current_user.is_authenticated:
+        flash('Please logout before registration')
+        return redirect(url_for('homepage'))
     if form.validate_on_submit():
-        user = User(username=form.username.data, name = form.name.data, email=form.email.data)
+        user = User(username=form.username.data, name=form.name.data, email=form.email.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -72,6 +74,16 @@ def register():
 def homepage():
     return render_template('base.html')
 
+#delete account
+@myapp_obj.route('/delete')
+@login_required
+def delete():
+    current_user.delete()
+    db.session.commit()
+    flash('User has been deleted')
+    logout_user()
+    return redirect('/')
+    
 @myapp_obj.route('/users')
 def users():
     all_users = User.query.all()
@@ -85,7 +97,7 @@ def account():
         return redirect('/')
     # Display profile info
     user = current_user
-    
+    print(user.name)
         
     return render_template("profile.html", user=user)
     

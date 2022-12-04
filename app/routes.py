@@ -59,8 +59,11 @@ def login():
 @myapp_obj.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
+    if current_user.is_authenticated:
+            flash('Please logout before registration')
+            return redirect(url_for('homepage'))
     if form.validate_on_submit():
-        user = User(username=form.username.data, name = form.name.data, email=form.email.data)
+        user = User(username = form.username.data, name = form.name.data, email=form.email.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()

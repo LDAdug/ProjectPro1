@@ -6,7 +6,7 @@
     </h1>
     {% for user in form %} 
     <div>
-        <p><b>Name:</b> {{ user.username }}, <b>Email:</b> {{ user.email}}</p>
+        <p><b>Username:</b> {{ user.username }}, <b>Preferred Name:</b> {{ user.name }}, <b>Email:</b> {{ user.email}}</p>
     </div>
     {% endfor %}
 {% endblock %}

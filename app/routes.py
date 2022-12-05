@@ -141,7 +141,6 @@ def unfollow(username):
 @myapp_obj.route('/user/<username>')
 @login_required
 def user(username):
-    # ...
     form = EmptyForm()
     return render_template('user.html', user=user, form=form)
 
@@ -149,6 +148,29 @@ def user(username):
 @myapp_obj.route("/search",methods =['POST','GET'])
 @login_required
 def search():
-    all_users = User.query.all()
-    return render_template("search.html", form=all_users)
+    form = Search()
+    #if form.validate_on_submit():
+        #print(form.username.data)
+    return render_template("search.html", form = form)
+
+@myapp_obj.route("/searchResult",methods =['POST'])
+@login_required
+def searchResult():
+    current_form = Search()
+    name = ""
+    user = User.query.filter_by(username=current_form.username.data).first()
+    if user is None:
+        flash('User does not exist')
+    else:
+        name = current_form.username.data
+    return render_template('searchResult.html', name = name)
+
+@myapp_obj.route("/searchProfile/<name>",methods =['GET'])
+@login_required
+def searchProfile(name):
+    # Display profile info
+    form = EmptyForm()
+    user = User.query.filter_by(username=name).first()   
+    print(user)
+    return render_template("searchProfile.html", user=user, form=form)
 

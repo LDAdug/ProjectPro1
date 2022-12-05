@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(15))
     password = db.Column(db.String(200))
     email = db.Column(db.String(32), unique = True)
-
+    
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),

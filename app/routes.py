@@ -112,7 +112,7 @@ def account():
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+        post = Post(body=form.post.data)
         db.session.add(post)
         db.session.commit()
         flash('Your latest message has been posted!')

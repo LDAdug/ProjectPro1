@@ -34,3 +34,19 @@ a tutorial together, fixed some bugs
 - Lawrence: Worked on logout and login page and revisions
 - Summary: All members worked on milestone 1 proposal revisions, Hai worked on delete account, michael worked on revisions, lawrence
 worked on login and logout page.
+
+### 2022-12-3 at 3:00pm
+- Attendance: Michael and Hai 
+- Team updates: Worked on code
+- Hai: Created Favbar bootstrap theme and added delete button
+- Michael: worked on adding preferred name for User models, worked on database, and profile page
+- Summary: Hai worked on bootstrap theme, delete button and implemented it, michael worked on adding a preferred name for users
+and adding it to the database. Michael added username, email and preferred name to profile page
+
+### 20220-12-4 at 3:00pm
+- Attendance: Michael, Hai Lawrence
+- Team updates: Worked on code
+- Hai: Finished delete account button, worked on follow user
+- Michael: added profile image avatar, and worked on search for user bar
+- Lawrence: Worked on blog messages and post
+- Summary: 

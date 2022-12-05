@@ -1,8 +1,7 @@
 from app import myapp_obj
 from app import db
-from app.forms import RegistrationForm
+from app.forms import RegistrationForm, EmptyForm, LoginForm
 from flask import render_template, redirect, flash, url_for
-from app.forms import LoginForm
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user
@@ -97,7 +96,52 @@ def account():
         return redirect('/')
     # Display profile info
     user = current_user
+    form = EmptyForm()
     print(user.name)
         
-    return render_template("profile.html", user=user)
-    
+    return render_template("profile.html", user=user, form=form)
+
+# Follower user  
+@myapp_obj.route('/follow/<username>', methods=['POST'])
+@login_required
+def follow(username):
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=username).first()
+        if user is None:
+            flash('User {} not found.'.format(username))
+            return redirect(url_for('homepage'))
+        if user == current_user:
+            flash('You cannot follow yourself!')
+            return redirect(url_for('homepage'))    
+        current_user.follow(user)
+        db.session.commit()
+        flash('You are following {}!'.format(username))
+    else:
+        return redirect(url_for('homepage'))
+
+@myapp_obj.route('/unfollow/<username>', methods=['POST'])
+@login_required
+def unfollow(username):
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=username).first()
+        if user is None:
+            flash('User {} not found.'.format(username))
+            return redirect(url_for('homepage'))
+        if user == current_user:
+            flash('You cannot unfollow yourself!')
+            return redirect(url_for('homepage')) 
+        current_user.unfollow(user)
+        db.session.commit()
+        flash('You are not following {}.'.format(username))
+        return redirect(url_for('homepage'))
+    else:
+        return redirect(url_for('homepage'))
+
+@myapp_obj.route('/user/<username>')
+@login_required
+def user(username):
+    # ...
+    form = EmptyForm()
+    return render_template('user.html', user=user, form=form)

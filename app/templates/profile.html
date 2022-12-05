@@ -17,5 +17,16 @@
         </p>
     </div>
 </nav>
+<h1>User: {{ user.username }}</h1>
+        <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+        <form action="{{ url_for('follow', username=user.username) }}" method="post">
+          {{ form.hidden_tag() }}
+          {{ form.submit(value='Follow') }}
+        </form>
+        <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+          {{ form.hidden_tag() }}
+          {{ form.submit(value='Unfollow') }}
+      </form>
+       
 
 {% endblock %}

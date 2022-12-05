@@ -2,7 +2,7 @@ from app import myapp_obj
 from app import db
 from app.forms import RegistrationForm
 from flask import render_template, redirect, flash, url_for
-from app.forms import LoginForm
+from app.forms import LoginForm, Search
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user
@@ -62,7 +62,7 @@ def register():
         flash('Please logout before registration')
         return redirect(url_for('homepage'))
     if form.validate_on_submit():
-        user = User(username=form.username.data, name=form.name.data, email=form.email.data)
+        user = User(username = form.username.data, name = form.name.data, email=form.email.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -84,10 +84,10 @@ def delete():
     logout_user()
     return redirect('/')
     
-@myapp_obj.route('/users')
+@myapp_obj.route('/search')
 def users():
     all_users = User.query.all()
-    return render_template("Users.html", form=all_users)
+    return render_template("search.html", form=all_users)
 
 @myapp_obj.route('/account')
 def account():
@@ -100,4 +100,6 @@ def account():
     print(user.name)
         
     return render_template("profile.html", user=user)
-    
+
+#@myapp_obj.route("/search",methods =['POST','GET'])
+#def search():

@@ -3,6 +3,11 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, InputRequired
 from app.models import User
 
+from wtforms.validators import Length
+from wtforms import TextAreaField
+
+
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -28,6 +33,9 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             raise ValidationError('Please use a different email address.')
 
+class PostForm(FlaskForm):
+    post = TextAreaField("What's on your mind. ", validators=[DataRequired(), Length(min=1, max=100)])
+    submit = SubmitField('Post')
 
 class EmptyForm(FlaskForm):
     submit = SubmitField('Submit')
@@ -35,3 +43,4 @@ class EmptyForm(FlaskForm):
 class Search(FlaskForm):
     username = StringField("ID",validators=[DataRequired()])
     submit = SubmitField("Submit")
+

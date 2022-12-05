@@ -2,10 +2,7 @@ from app import myapp_obj
 from app import db
 from app.forms import RegistrationForm, EmptyForm, LoginForm
 from flask import render_template, redirect, flash, url_for
-<<<<<<< HEAD
-=======
 from app.forms import LoginForm, Search
->>>>>>> main
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user

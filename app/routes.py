@@ -84,10 +84,7 @@ def delete():
     logout_user()
     return redirect('/')
     
-@myapp_obj.route('/search')
-def users():
-    all_users = User.query.all()
-    return render_template("search.html", form=all_users)
+
 
 @myapp_obj.route('/account')
 def account():
@@ -101,5 +98,8 @@ def account():
         
     return render_template("profile.html", user=user)
 
-#@myapp_obj.route("/search",methods =['POST','GET'])
-#def search():
+@myapp_obj.route("/search",methods =['POST','GET'])
+@login_required
+def search():
+    all_users = User.query.all()
+    return render_template("search.html", form=all_users)

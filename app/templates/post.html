@@ -13,9 +13,9 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
-    {% for post in posts %}
+    {% for user in post %}
     <p>
-    <b>{{ post.author.username }} says:</b> {{ post.body }}
+    <b>{{ user.user_id }} says:</b> {{ user.body }}
     </p>
 
 

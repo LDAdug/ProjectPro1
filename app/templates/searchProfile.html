@@ -18,15 +18,20 @@
     <div class="jumbotron">
         <h1 class="display-4">Name: {{ user.name }}</h1>
         <p class="lead">Username: {{ user.username }}</p>
-        <p class="lead">Email: {{ user.email }}</p>
-        <p class="lead">Placeholder</p>
+ 
         <hr class="my-4">
-        <p>Placholder</p>
-        <p class="lead">
-          <a href="/delete"><button type="button" class="btn btn-warning">
-            Delete Account
-          </a></button>
-        </p>
     </div>
 </nav>
+<h1>User: {{ user.username }}</h1>
+        <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+        <form action="{{ url_for('follow', username=user.username) }}" method="post">
+          {{ form.hidden_tag() }}
+          {{ form.submit(value='Follow') }}
+        </form>
+        <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+          {{ form.hidden_tag() }}
+          {{ form.submit(value='Unfollow') }}
+      </form>
+       
+
 {% endblock %}

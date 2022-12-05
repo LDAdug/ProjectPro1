@@ -2,10 +2,16 @@
 
 {% block mycontent %}
 <nav class="navbar navbar-light bg-light justify-content-between">
-    <a class="navbar-brand">Search for Username</a>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </nav>
+<form action={{ url_for('searchResult') }} method='post'>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }}<br>
+        {{ form.username(size=32) }}<br>
+        {% for error in form.username.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+</nav>
   {% endblock %}

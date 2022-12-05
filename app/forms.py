@@ -41,6 +41,6 @@ class EmptyForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class Search(FlaskForm):
-    username = StringField("ID",validators=[DataRequired()])
+    username = StringField("Search for Username",validators=[DataRequired()])
     submit = SubmitField("Submit")
 

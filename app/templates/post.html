@@ -15,7 +15,10 @@
     </form>
     {% for post in posts %}
     <p>
-    {{ post.author.username }} says: <b>{{ post.body }}</b>
+    <b>{{ post.author.username }} says:</b> {{ post.body }}
     </p>
+
+
     {% endfor %}
+
 {% endblock %}

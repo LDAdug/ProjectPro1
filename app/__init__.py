@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_migrate import Migrate
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -14,7 +15,6 @@ myapp_obj.config.update(
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 )
 db = SQLAlchemy(myapp_obj)
-
 login = LoginManager(myapp_obj)
 
 migrate = Migrate(myapp_obj, db)

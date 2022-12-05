@@ -28,6 +28,10 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             raise ValidationError('Please use a different email address.')
 
+
+class EmptyForm(FlaskForm):
+    submit = SubmitField('Submit')
+
 class Search(FlaskForm):
     username = StringField("ID",validators=[DataRequired()])
     submit = SubmitField("Submit")

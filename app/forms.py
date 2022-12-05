@@ -36,3 +36,11 @@ class RegistrationForm(FlaskForm):
 class PostForm(FlaskForm):
     post = TextAreaField("What's on your mind. ", validators=[DataRequired(), Length(min=1, max=100)])
     submit = SubmitField('Post')
+
+class EmptyForm(FlaskForm):
+    submit = SubmitField('Submit')
+
+class Search(FlaskForm):
+    username = StringField("ID",validators=[DataRequired()])
+    submit = SubmitField("Submit")
+

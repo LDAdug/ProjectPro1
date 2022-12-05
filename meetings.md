@@ -49,4 +49,5 @@ and adding it to the database. Michael added username, email and preferred name 
 - Hai: Finished delete account button, worked on follow user
 - Michael: added profile image avatar, and worked on search for user bar
 - Lawrence: Worked on blog messages and post
-- Summary: 
+- Summary: Michael worked on profile image, search use bar. Lawrence worked on sending a message on a blog.
+Hai worked on the delete button and follow/unfollow buttons.

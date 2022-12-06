@@ -12,6 +12,7 @@ from flask_login import logout_user
 from app.forms import PostForm
 from app.models import Post
 from datetime import datetime
+from time import ctime
 
 
 @myapp_obj.route('/private')

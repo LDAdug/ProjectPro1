@@ -17,6 +17,9 @@ from time import ctime
 from app.forms import MessageForm
 from app.models import Message
 
+from time import ctime
+from app.forms import MessageForm
+from app.models import Message
 
 
 @myapp_obj.route('/private')

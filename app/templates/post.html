@@ -18,7 +18,9 @@
     </form>
     {% for user in post %}
     <p>
-    <b>{{ user.user_id }} says:</b> {{ user.body }} <b>|| posted on:</b>  {{ user.timestamp }}(UTC-0)
+
+    <b>{{ user.user_id }} says:</b> {{ user.body }} <b>|| posted:</b>  {{ moment(user.timestamp).format('MMMM Do YYYY, h:mm:ss A') }}
+
     </p>
 
 

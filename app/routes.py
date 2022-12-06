@@ -1,7 +1,7 @@
 from app import myapp_obj
 from app import db
 from app.forms import RegistrationForm, EmptyForm, LoginForm
-from flask import render_template, redirect, flash, url_for
+from flask import render_template, redirect, flash, url_for, request
 from app.forms import LoginForm, Search
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -12,6 +12,8 @@ from flask_login import logout_user
 from app.forms import PostForm
 from app.models import Post
 from datetime import datetime
+from app.forms import MessageForm
+from app.models import Message
 
 
 @myapp_obj.route('/private')
@@ -65,7 +67,7 @@ def register():
         flash('Please logout before registration')
         return redirect(url_for('homepage'))
     if form.validate_on_submit():
-        user = User(username = form.username.data, name = form.name.data, email=form.email.data)
+        user = User(username = form.username.data, name = form.name.data, email=form.email.data, num_new_private_messages = 0)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -75,7 +77,7 @@ def register():
     
 @myapp_obj.route('/')
 def homepage():
-    return render_template('base.html')
+    return render_template('base.html', current_user=current_user)
 
 #delete account
 @myapp_obj.route('/delete')
@@ -98,8 +100,6 @@ def account():
     # Display profile info
     user = current_user
     form = EmptyForm()
-    print(user.name)
-        
     return render_template("profile.html", user=user, form=form)
 
 @myapp_obj.route('/post', methods=['GET','POST'])
@@ -139,6 +139,7 @@ def follow(username):
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
         if user is None:
+
             flash('User {} not found.'.format(username))
             return redirect(url_for('homepage'))
         if user == current_user:
@@ -147,6 +148,7 @@ def follow(username):
         current_user.follow(user)
         db.session.commit()
         flash('You are following {}!'.format(username))
+        return redirect( url_for('searchProfile', name=username))
     else:
         return redirect(url_for('homepage'))
 
@@ -165,7 +167,7 @@ def unfollow(username):
         current_user.unfollow(user)
         db.session.commit()
         flash('You are not following {}.'.format(username))
-        return redirect(url_for('homepage'))
+        return redirect( url_for('searchProfile', name=username))
     else:
         return redirect(url_for('homepage'))
 
@@ -181,8 +183,6 @@ def user(username):
 @login_required
 def search():
     form = Search()
-    #if form.validate_on_submit():
-        #print(form.username.data)
     return render_template("search.html", form = form)
 
 @myapp_obj.route("/searchResult",methods =['POST'])
@@ -203,8 +203,51 @@ def searchProfile(name):
     # Display profile info
     form = EmptyForm()
     user = User.query.filter_by(username=name).first()   
-    print(user)
     return render_template("searchProfile.html", user=user, form=form)
 
+#send private message
+@myapp_obj.route('/send_message/<recipient>', methods=['GET', 'POST'])
+@login_required
+def send_message(recipient):
+    user = User.query.filter_by(username=recipient).first_or_404()
+    form = MessageForm()
+    if form.validate_on_submit():
+        if current_user.username == recipient:
+            flash('Cannot send a private message to yourself')
+            return redirect(url_for('searchProfile', name=recipient))
+        msg = Message(author=current_user, recipient=user,
+                      body=form.message.data)
+        db.session.add(msg)
+        db.session.commit()
+        if user.num_new_private_messages is None:
+            user.zero_new_private_messages()
+        else:
+            user.increment_num_new_private_messages()
+            db.session.commit()
+        flash(('Your message has been sent.'))
+        return redirect(url_for('send_message',
+                      recipient=user.username))
+    
+    return render_template('send_message.html', title='Send Message',
+                           form=form, recipient=recipient)
 
-
+#view private message
+@myapp_obj.route('/messages')
+@login_required
+def messages():
+    db.session.commit()
+    current_user.last_message_read_time = datetime.utcnow()
+    page = request.args.get('page', 1, type=int)
+    messages = current_user.messages_received.order_by(
+        Message.timestamp.desc()).paginate(
+            page=page, per_page=myapp_obj.config['POSTS_PER_PAGE'],
+            error_out=False)
+    next_url = url_for('messages', page=messages.next_num) \
+        if messages.has_next else None
+    prev_url = url_for('messages', page=messages.prev_num) \
+        if messages.has_prev else None
+    current_user.zero_new_private_messages()
+    db.session.commit()
+    
+    return render_template('messages.html', messages=messages,
+                           next_url=next_url, prev_url=prev_url, User=User)

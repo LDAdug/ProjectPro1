@@ -44,3 +44,7 @@ class Search(FlaskForm):
     username = StringField("Search for Username",validators=[DataRequired()])
     submit = SubmitField("Submit")
 
+class MessageForm(FlaskForm):
+    message = TextAreaField("Send a private message", validators=[
+        DataRequired(), Length(min=0, max=140)])
+    submit = SubmitField('Submit')

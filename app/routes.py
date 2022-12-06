@@ -1,6 +1,6 @@
 from app import myapp_obj
 from app import db
-from app.forms import RegistrationForm, EmptyForm, LoginForm
+from app.forms import RegistrationForm, EmptyForm, LoginForm, EditProfileForm
 from flask import render_template, redirect, flash, url_for, request
 from app.forms import LoginForm, Search
 from app.models import User
@@ -252,3 +252,19 @@ def messages():
     
     return render_template('messages.html', messages=messages,
                            next_url=next_url, prev_url=prev_url, User=User)
+
+
+@myapp_obj.route('/editProfile', methods=['GET', 'POST'])
+@login_required
+def editProfile():
+    form = EditProfileForm()
+    if form.validate_on_submit():
+        current_user.username = form.username.data
+        current_user.changebio = form.changebio.data
+        db.session.commit()
+        flash('Your changes have been saved.')
+        return redirect(url_for('account'))
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+        form.changebio.data = current_user.changebio
+    return render_template('editProfile.html', title='Edit Profile', form=form)

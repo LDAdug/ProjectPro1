@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block mycontent %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 <table>
   <tr valign="top">
       <td><img src="{{ user.avatar(128) }}"></td>
@@ -14,6 +15,13 @@
   </tr>
 </table>    
 {% endfor %}
+<a class="navbar-brand" href="{{ url_for('messages') }}"> 
+  {{ ('New Private Messages') }}
+  <span class="badge badge-primary">
+    {{ user.num_new_private_messages }}
+  </span>
+</a>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="jumbotron">
         <h1 class="display-4">Name: {{ user.name }}</h1>

@@ -27,14 +27,21 @@
         <h1 class="display-4">Name: {{ user.name }}</h1>
         <p class="lead">Username: {{ user.username }}</p>
         <p class="lead">Email: {{ user.email }}</p>
-        <p class="lead">Placeholder</p>
+        {% if user == current_user %}
+          <p><a href="{{ url_for('editProfile') }}">Edit your profile</a></p>
+        {% endif %}
         <hr class="my-4">
-        <p>Placholder</p>
+        <p class="lead">[Bio:] {{ user.changebio }}</p>
         <p class="lead">
           <a href="/delete"><button type="button" class="btn btn-warning">
             Delete Account
           </a></button>
         </p>
+    </div>
+    <div>
+      <h1>
+        <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+      </h1>
     </div>
 </nav>
 {% endblock %}

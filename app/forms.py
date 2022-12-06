@@ -7,7 +7,6 @@ from wtforms.validators import Length
 from wtforms import TextAreaField
 
 
-
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -34,7 +33,7 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Please use a different email address.')
 
 class PostForm(FlaskForm):
-    post = TextAreaField("What's on your mind. ", validators=[DataRequired(), Length(min=1, max=100)])
+    post = TextAreaField("What's on your mind. ", validators=[DataRequired(), Length(min=1, max=200)])
     submit = SubmitField('Post')
 
 class EmptyForm(FlaskForm):

@@ -24,13 +24,13 @@ To run this app you will need the following libraries:
 * Moment
 * wtforms
 ```
-$ install flask
-$ install flask-wtf
-$ install flask-sqlalchemy
-$ install flask-migrate
-$ install flask-login
-$ install email-validator
-$ install flask-moment
+$ pip install flask
+$ pip install flask-wtf
+$ pip install flask-sqlalchemy
+$ pip install flask-migrate
+$ pip install flask-login
+$ pip install email-validator
+$ pip install flask-moment
 ```
 ## Starting Up the App
 Once you have downloaded all files from the GitHub Repository

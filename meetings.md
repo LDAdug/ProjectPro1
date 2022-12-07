@@ -52,7 +52,7 @@ and adding it to the database. Michael added username, email and preferred name 
 - Summary: Michael worked on profile image, search use bar. Lawrence worked on sending a message on a blog.
 Hai worked on the delete button and follow/unfollow buttons.
 
-### 2020-12-4 at 11:00pm
+### 2020-12-6 at 11:00pm
 - Attendance: Michael, Hai, Lawrence
 - Team updates: Worked on code
 - Hai: Finished send/receive private messsages, added follower count onto profile page

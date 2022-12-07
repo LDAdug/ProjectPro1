@@ -5,7 +5,7 @@
 3. Create new account (Michael)
 4. Delete account (Hai)
 5. User home page (user can see messages of users they follow) (Michael)
-6. Send message to followers (lawrence)
+6. Post message users site-wide (lawrence)
 7. Search for user (Michael)
 8. Follow User (Hai)
 9. User Profiles (Michael)
@@ -22,29 +22,24 @@
 
 ## Use Cases
 
-1. Send message to followers (Lawrence)
+1. Post message users site-wide (Lawrence)
 - **Pre-condition:**  
-Followers must be following user and user must know who is following them
+User must be registered have an account
 
 - **Trigger:**  
-Button that initiates form to select followers and create a message that will be sent to selected followers
-
-Button automatically saves followers onto a list and present user with call to create a message
+Button that initiates form to type a message to be sent to the website for all users to view
 
 - **Primary Sequence:**
   
-  1. Press button that initiates trigger #1
-  2. Window appears showing followers list
-  3. Selected followers is saved onto a list 
-  4. Call to user to create a message
-  5. Saves message onto a string
-  6. Button appears to send message
-  7. Message is exported and imported to the followers
-  8. Message is called and displayed to the follower
+  1. Press button that initiates trigger
+  2. Redirects user to posting page
+  3. User composes message inside the given textbox 
+  4. User clicks the submit button
+  5. Message is sent to the website to be displayed and presented to all other users
  
 
 - **Primary Postconditions:** 
-Return condition where if a message has been successfully sent, return to user’s page where “send message to follower” button is offered and notify message sent successfully.
+Return condition where if a message has been successfully sent, return to user’s page where “Post message” button is offered and notify message sent successfully.
 
 
 - **Alternate Sequence:** 

@@ -43,7 +43,7 @@ worked on login and logout page.
 - Summary: Hai worked on bootstrap theme, delete button and implemented it, michael worked on adding a preferred name for users
 and adding it to the database. Michael added username, email and preferred name to profile page
 
-### 20220-12-4 at 3:00pm
+### 2020-12-4 at 3:00pm
 - Attendance: Michael, Hai Lawrence
 - Team updates: Worked on code
 - Hai: Finished delete account button, worked on follow user
@@ -51,3 +51,12 @@ and adding it to the database. Michael added username, email and preferred name 
 - Lawrence: Worked on blog messages and post
 - Summary: Michael worked on profile image, search use bar. Lawrence worked on sending a message on a blog.
 Hai worked on the delete button and follow/unfollow buttons.
+
+### 2020-12-6 at 11:00pm
+- Attendance: Michael, Hai, Lawrence
+- Team updates: Worked on code
+- Hai: Finished send/receive private messsages, added follower count onto profile page
+- Michael: Added edit profile link and page, Added bio
+- Lawrence: Added timestamp on post page in PST, added post to homepage
+- Summary: Michael worked on edit profile link and page, added bio. Lawrence added timestamp on post page in pst.
+Hai worked on send/receive private messages.

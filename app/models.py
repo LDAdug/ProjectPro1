@@ -19,6 +19,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(32), unique = True)
     last_message_read_time = db.Column(db.DateTime)
     num_new_private_messages = db.Column(db.Integer)
+    changebio = db.Column(db.String(140))
+    #last_seen = db.Column(db.DataTime, default=datetime.utcnow)
 
     followed = db.relationship(
         'User', secondary=followers,

@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, InputRequired
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
 
 from wtforms.validators import Length
@@ -46,4 +46,9 @@ class Search(FlaskForm):
 class MessageForm(FlaskForm):
     message = TextAreaField("Send a private message", validators=[
         DataRequired(), Length(min=0, max=140)])
+    submit = SubmitField('Submit')
+
+class EditProfileForm(FlaskForm):
+    username = StringField('Change Username', validators=[DataRequired()])
+    changebio = TextAreaField('Change Bio', validators=[Length(min=0, max=140)])
     submit = SubmitField('Submit')

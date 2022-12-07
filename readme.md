@@ -17,13 +17,13 @@ Welcome to the Screech Social Media App! This app is a joint project, developed 
 ## Required Libraries
 To run this app you will need the following libraries:
 * SQL Alchemy
-* Flask
 * Email Validator
-* wtforms
+* Flask
+* Flask Login
 * Flask Migrate
 * Moment
+* wtforms
 ```
-$ install python
 $ install flask
 $ install flask-wtf
 $ install flask-sqlalchemy
